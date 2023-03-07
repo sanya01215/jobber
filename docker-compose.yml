@@ -1,0 +1,22 @@
+version: '3.7'
+services:
+  client:
+    image: nginx
+    ports:
+      - 8000:80
+    volumes:
+      - ./src:/usr/share/nginx/html
+  db:
+    ports:
+      - "5432:5432"
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: root
+      TZ: 'GMT+2'
+      PGTZ: 'GMT+2'
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "9901:8080"

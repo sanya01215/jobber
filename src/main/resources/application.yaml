@@ -1,0 +1,28 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: root
+  security:
+    oauth2:
+      client:
+        registration:
+          auth0:
+            client-id: 9vqbUT1dX6i4f4J6fTvEsfsWKKJJPlUD
+            client-secret: oL5k1tGb1oqWVHxik21Dq3mq7vM2fifmNmtosTXBn0bBbzi3tPFJiBUXhtej_E0M
+            scope:
+              - openid
+              - profile
+              - email
+        provider:
+          auth0:
+            # trailing slash is important!
+            issuer-uri: https://dev-b5quzbz3.us.auth0.com/
